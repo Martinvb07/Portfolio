@@ -104,9 +104,9 @@ export default function Portfolio() {
   const [statsActive, setStatsActive]   = useState(false);
   const [metricActive, setMetricActive] = useState(false);
 
-  const countProjects = useCountUp(8,  statsActive,  1800);
+  const countProjects = useCountUp(9,  statsActive,  1800);
   const countYear     = useCountUp(26, statsActive,  2200);
-  const countMetric   = useCountUp(8,  metricActive, 2000);
+  const countMetric   = useCountUp(9,  metricActive, 2000);
 
   function copyEmail(e: React.MouseEvent) {
     e.preventDefault();
@@ -340,24 +340,36 @@ export default function Portfolio() {
             <div className="featured-preview">
               <div className="featured-preview-grid" />
               <div className="featured-corner"><span className="signal">●</span> {bi(FEATURED.tag)}</div>
-              <div className="featured-preview-mock" aria-hidden="true">
-                <div className="fpm-bar">
-                  <span className="fpm-dot" /><span className="fpm-dot" /><span className="fpm-dot" />
-                  <span className="fpm-url">{FEATURED.url}</span>
-                </div>
-                <div className="fpm-body">
-                  {[1, 2, 3].map((i) => (
-                    <div className="fpm-row" key={i}>
-                      <div className="fpm-thumb" />
-                      <div className="fpm-lines">
-                        <div className="fpm-line" />
-                        <div className={`fpm-line ${i === 3 ? 'signal' : 'short'}`} />
+              {FEATURED.videoUrl ? (
+                <video
+                  className="featured-preview-video"
+                  src={FEATURED.videoUrl}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  aria-hidden="true"
+                />
+              ) : (
+                <div className="featured-preview-mock" aria-hidden="true">
+                  <div className="fpm-bar">
+                    <span className="fpm-dot" /><span className="fpm-dot" /><span className="fpm-dot" />
+                    <span className="fpm-url">{FEATURED.url}</span>
+                  </div>
+                  <div className="fpm-body">
+                    {[1, 2, 3].map((i) => (
+                      <div className="fpm-row" key={i}>
+                        <div className="fpm-thumb" />
+                        <div className="fpm-lines">
+                          <div className="fpm-line" />
+                          <div className={`fpm-line ${i === 3 ? 'signal' : 'short'}`} />
+                        </div>
                       </div>
-                    </div>
-                  ))}
-                  <span className="fpm-cta">Reservar →</span>
+                    ))}
+                    <span className="fpm-cta">Reservar →</span>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
             <div className="featured-body">
               <div className="featured-tagline"><span className="signal">●</span><span>{bi(FEATURED.status)}</span></div>
@@ -552,24 +564,39 @@ export default function Portfolio() {
               <div className="featured-preview">
                 <div className="featured-preview-grid" />
                 <div className="featured-corner"><span className="signal">●</span> {bi(openProj.tag)}</div>
-                <div className="featured-preview-mock" aria-hidden="true">
-                  <div className="fpm-bar">
-                    <span className="fpm-dot" /><span className="fpm-dot" /><span className="fpm-dot" />
-                    <span className="fpm-url">{openProj.url}</span>
+                {openProj.videoUrl ? (
+                  <video
+                    className="featured-preview-video"
+                    src={openProj.videoUrl}
+                    autoPlay muted loop playsInline aria-hidden="true"
+                  />
+                ) : openProj.type.es.includes('Discord') ? (
+                  <div className="discord-preview" aria-hidden="true">
+                    <svg className="discord-preview-logo" viewBox="0 0 127.14 96.36" xmlns="http://www.w3.org/2000/svg">
+                      <path fill="#5865F2" d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/>
+                    </svg>
+                    <span className="discord-preview-label">{openProj.url}</span>
                   </div>
-                  <div className="fpm-body">
-                    {[1, 2, 3].map((i) => (
-                      <div className="fpm-row" key={i}>
-                        <div className="fpm-thumb" />
-                        <div className="fpm-lines">
-                          <div className="fpm-line" />
-                          <div className={`fpm-line ${i === 3 ? 'signal' : 'short'}`} />
+                ) : (
+                  <div className="featured-preview-mock" aria-hidden="true">
+                    <div className="fpm-bar">
+                      <span className="fpm-dot" /><span className="fpm-dot" /><span className="fpm-dot" />
+                      <span className="fpm-url">{openProj.url}</span>
+                    </div>
+                    <div className="fpm-body">
+                      {[1, 2, 3].map((i) => (
+                        <div className="fpm-row" key={i}>
+                          <div className="fpm-thumb" />
+                          <div className="fpm-lines">
+                            <div className="fpm-line" />
+                            <div className={`fpm-line ${i === 3 ? 'signal' : 'short'}`} />
+                          </div>
                         </div>
-                      </div>
-                    ))}
-                    <span className="fpm-cta">View →</span>
+                      ))}
+                      <span className="fpm-cta">View →</span>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
               <div className="featured-body">
                 <div className="featured-tagline"><span className="signal">●</span><span>{bi(openProj.status)}</span></div>

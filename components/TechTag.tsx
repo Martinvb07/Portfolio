@@ -11,14 +11,26 @@ function WompiIcon() {
   );
 }
 
+function LenisIcon() {
+  return (
+    <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2 9c2.5-3.5 5-3.5 7 0s4.5 3.5 7 0" />
+      <path d="M2 15c2.5-3.5 5-3.5 7 0s4.5 3.5 7 0" />
+    </svg>
+  );
+}
+
 export default function TechTag({ tag, size = 'sm' }: { tag: string; size?: 'sm' | 'lg' }) {
   const tech = TECH_ICONS[tag];
   const isWompi = tag === 'Wompi';
+  const isLenis = tag === 'Lenis';
 
   return (
-    <span className={`tag tag-${size}${(tech || isWompi) ? ' has-ico' : ''}`}>
+    <span className={`tag tag-${size}${(tech || isWompi || isLenis) ? ' has-ico' : ''}`}>
       {isWompi ? (
         <span className="tag-ico"><WompiIcon /></span>
+      ) : isLenis ? (
+        <span className="tag-ico"><LenisIcon /></span>
       ) : tech ? (
         <span className="tag-ico">
           {/* eslint-disable-next-line @next/next/no-img-element */}

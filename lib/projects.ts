@@ -17,6 +17,8 @@ export type Project = {
   url: string;
   liveUrl?: string;
   repoUrl?: string;
+  videoUrl?: string;
+  images?: string[];
   featured?: boolean;
   sub: Bilingual;
   stack: string;
@@ -33,14 +35,70 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
-    key: 'reservatucancha', idx: '01', name: 'ReservaTuCancha',
+    key: 'cuscus-hats', idx: '01', name: 'Cuscus Hats',
+    url: 'cuscushats.com', liveUrl: 'https://cuscushats.com/',
+    videoUrl: '/api/videos/cuscus-hats',
+    featured: true,
+    stack: 'Next.js · Express · MongoDB',
+    sub: { es: 'Marca de moda con drops limitados y countdown', en: 'Fashion brand with limited drops and countdown' },
+    type: { es: 'E-commerce · Moda', en: 'E-commerce · Fashion' }, year: '2026',
+    tag: { es: 'FEATURED — 01', en: 'FEATURED — 01' },
+    status: { es: 'Online · 2026', en: 'Online · 2026' },
+    desc: {
+      es: 'Plataforma de lanzamientos para Cuscus Hats, marca de moda de edición limitada: landing con countdown al próximo drop, registro de emails por país, integración con Instagram y TikTok, y panel de administración.',
+      en: 'Launch platform for Cuscus Hats, a limited-edition fashion brand: landing with countdown to the next drop, email signup by country, Instagram and TikTok integration, and admin panel.',
+    },
+    role: { es: 'Full stack · solo', en: 'Full stack · solo' },
+    state: { es: 'En producción', en: 'In production' },
+    tags: ['Next.js', 'TypeScript', 'Framer Motion', 'Lenis', 'Tailwind', 'Express', 'MongoDB'],
+    case: {
+      problem: {
+        es: 'Una marca local de moda urbana quería generar expectativa antes de su primer drop con una landing diferenciada — nada de Shopify genérico, sino una experiencia que transmitiera exclusividad desde el primer clic.',
+        en: 'A local urban fashion brand wanted to build hype before their first drop with a differentiated landing — no generic Shopify, but an experience that conveyed exclusivity from the first click.',
+      },
+      approach: {
+        es: 'Next.js 15 con App Router para SSR, SEO y carga rápida. Framer Motion para animaciones de entrada con identidad de marca. Lenis para scroll ultra-suave. Registro de emails segmentado por país (selector Colombia, etc.). Contador regresivo al próximo drop en tiempo real. Backend Express + MongoDB para persistencia de registros.',
+        en: 'Next.js 15 with App Router for SSR, SEO and fast loads. Framer Motion for brand-aligned entrance animations. Lenis for ultra-smooth scrolling. Email signup segmented by country. Real-time countdown to next drop. Express + MongoDB backend for registration persistence.',
+      },
+      highlights: {
+        es: [
+          'Countdown en tiempo real al próximo drop de la colección',
+          'Registro de emails con selector de país (Colombia y más)',
+          'Animaciones de marca con Framer Motion en cada sección',
+          'Scroll ultra-suave con Lenis integrado globalmente',
+          'Integración con Instagram y TikTok de la marca',
+          'Panel admin para gestionar registros y drops',
+        ],
+        en: [
+          'Real-time countdown to the next collection drop',
+          'Email signup with country selector (Colombia and more)',
+          'Brand animations with Framer Motion on every section',
+          'Ultra-smooth scroll with globally integrated Lenis',
+          'Instagram and TikTok brand integration',
+          'Admin panel to manage registrations and drops',
+        ],
+      },
+      results: [
+        { value: 'Online', label: { es: 'Landing activa en producción', en: 'Active landing in production' } },
+        { value: '60fps', label: { es: 'Animaciones fluidas', en: 'Smooth animations' } },
+        { value: 'Drop', label: { es: 'Sistema de lanzamientos limitados', en: 'Limited drop system' } },
+        { value: 'SSR', label: { es: 'Next.js 15 App Router', en: 'Next.js 15 App Router' } },
+      ],
+      lessons: {
+        es: 'Construir para una marca de moda es diseñar emoción antes que funcionalidad. Lenis + Framer Motion requiere sincronización cuidadosa con la hidratación de Next.js para evitar flashes. La estrategia de drops genera urgencia real — la tecnología debe estar a la altura de esa promesa.',
+        en: 'Building for a fashion brand means designing emotion before functionality. Lenis + Framer Motion requires careful sync with Next.js hydration to avoid flashes. The drop strategy creates real urgency — the tech must live up to that promise.',
+      },
+    },
+  },
+  {
+    key: 'reservatucancha', idx: '02', name: 'ReservaTuCancha',
     url: 'reservatucancha.site', liveUrl: 'https://reservatucancha.site/',
     repoUrl: 'https://github.com/Martinvb07/ReservaTuCancha',
-    featured: true,
+    videoUrl: '/api/videos/reservatucancha',
     stack: 'Next.js · NestJS · MongoDB',
     sub: { es: 'Reservas deportivas en tiempo real', en: 'Real-time sports court booking' },
-    type: { es: 'App · Reservas', en: 'App · Bookings' }, year: '2025',
-    tag: { es: 'FEATURED — 01', en: 'FEATURED — 01' },
+    type: { es: 'App · Reservas', en: 'App · Bookings' }, year: '2026',
+    tag: { es: 'CASE — 02', en: 'CASE — 02' },
     status: { es: 'Online · 2025', en: 'Online · 2025' },
     desc: {
       es: 'Plataforma de reservas deportivas: catálogo de canchas (fútbol, pádel, voley playa), disponibilidad en tiempo real con WebSockets, pagos con Wompi y panel para clubes con analíticas.',
@@ -89,13 +147,13 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    key: 'agromanager', idx: '02', name: 'AgroManager Pro',
+    key: 'agromanager', idx: '03', name: 'AgroManager Pro',
     url: 'agromanager.pro', liveUrl: 'https://agromanager.pro/',
     repoUrl: 'https://github.com/Martinvb07/AgroManager',
-    stack: 'React · Express · MySQL',
+    stack: 'React · Node.js · Oracle DB',
     sub: { es: 'Gestión agrícola SaaS', en: 'Agricultural SaaS dashboard' },
-    type: { es: 'SaaS · Dashboard', en: 'SaaS · Dashboard' }, year: '2024',
-    tag: { es: 'CASE — 02', en: 'CASE — 02' },
+    type: { es: 'SaaS · Dashboard', en: 'SaaS · Dashboard' }, year: '2025',
+    tag: { es: 'CASE — 03', en: 'CASE — 03' },
     status: { es: 'Online · 2024 → presente', en: 'Online · 2024 → present' },
     desc: {
       es: 'SaaS de gestión agrícola: control de lotes, cultivos, trabajadores, maquinaria, inventario y finanzas. Dashboard con métricas en tiempo real, alertas por etapa de siembra y exportación a PDF.',
@@ -103,15 +161,15 @@ export const PROJECTS: Project[] = [
     },
     role: { es: 'Full stack · solo', en: 'Full stack · solo' },
     state: { es: 'En producción', en: 'In production' },
-    tags: ['React', 'Vite', 'TypeScript', 'Express', 'MySQL', 'Tailwind'],
+    tags: ['React', 'Vite', 'TypeScript', 'Node.js', 'Oracle DB', 'Tailwind'],
     case: {
       problem: {
         es: 'Pequeños y medianos productores agrícolas en Colombia gestionan cultivos, inventario y trabajadores en cuadernos o Excel. No tienen visibilidad real de costos por lote, no saben qué cultivo les rinde más, y pierden tiempo en reportes manuales desactualizados.',
         en: 'Small and mid-sized farmers in Colombia manage crops, inventory and workers in notebooks or Excel. They have no real visibility on cost per plot and lose time on manual reports that are outdated by the time they\'re printed.',
       },
       approach: {
-        es: 'Frontend en React 19 + Vite para SPA rápida con múltiples módulos. Backend Express con MySQL para integridad transaccional en los registros financieros. Arquitectura separada frontend/backend para escalar independientemente. Exportación PDF con jsPDF para reportes presentables a bancos o cooperativas.',
-        en: 'React 19 + Vite frontend for fast SPA with multiple modules. Express backend with MySQL for transactional integrity on financial records. Separate frontend/backend architecture for independent scaling. PDF export with jsPDF for reports presentable to banks or cooperatives.',
+        es: 'Frontend en React 19 + Vite para SPA rápida con múltiples módulos. Backend Node.js + Express con Oracle Autonomous Database en la nube para integridad transaccional y PL/SQL avanzado (triggers, vistas, procedimientos). Arquitectura separada frontend/backend para escalar independientemente. Exportación PDF con jsPDF para reportes presentables a bancos o cooperativas.',
+        en: 'React 19 + Vite frontend for fast SPA with multiple modules. Node.js + Express backend with Oracle Autonomous Database in the cloud for transactional integrity and advanced PL/SQL (triggers, views, procedures). Separate frontend/backend architecture for independent scaling. PDF export with jsPDF for reports presentable to banks or cooperatives.',
       },
       highlights: {
         es: [
@@ -144,13 +202,14 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    key: 'mesoft', idx: '03', name: 'MeSoft',
+    key: 'mesoft', idx: '04', name: 'MeSoft',
     url: 'mesoft.store', liveUrl: 'https://mesoft.store/',
     repoUrl: 'https://github.com/Martinvb07/Mesoft',
-    stack: 'React · Express · MySQL',
+    videoUrl: '/api/videos/mesoft',
+    stack: 'React · NestJS · MongoDB',
     sub: { es: 'SaaS de gestión para restaurantes', en: 'Restaurant management SaaS' },
-    type: { es: 'SaaS · Restaurantes', en: 'SaaS · Restaurants' }, year: '2024',
-    tag: { es: 'CASE — 03', en: 'CASE — 03' },
+    type: { es: 'SaaS · Restaurantes', en: 'SaaS · Restaurants' }, year: '2025',
+    tag: { es: 'CASE — 04', en: 'CASE — 04' },
     status: { es: 'Online · 2024 → presente', en: 'Online · 2024 → present' },
     desc: {
       es: 'Plataforma SaaS multi-tenant para restaurantes: gestión de mesas en tiempo real, toma de pedidos, panel admin con finanzas, nómina e inventario. Roles para meseros y administradores.',
@@ -158,15 +217,15 @@ export const PROJECTS: Project[] = [
     },
     role: { es: 'Full stack · solo', en: 'Full stack · solo' },
     state: { es: 'En producción', en: 'In production' },
-    tags: ['React', 'Vite', 'Express', 'MySQL', 'JWT'],
+    tags: ['React', 'Vite', 'TypeScript', 'NestJS', 'MongoDB', 'JWT'],
     case: {
       problem: {
         es: 'Los restaurantes pequeños y medianos gestionan mesas y pedidos con papel, cuadernos o apps básicas que no se integran. Los meseros pierden tiempo, los errores de pedido son frecuentes y los dueños no tienen visibilidad real de sus finanzas ni inventario.',
         en: 'Small and mid-sized restaurants manage tables and orders with paper, notebooks or basic apps that don\'t integrate. Waiters waste time, order errors are frequent and owners have no real visibility of finances or inventory.',
       },
       approach: {
-        es: 'Frontend React 19 + Vite con SPA separada por roles. Backend Express 5 + MySQL con middleware multi-tenant (X-Restaurant-Id header) para aislar datos por restaurante. JWT para auth, bcrypt para contraseñas, Nodemailer para emails. Dos interfaces completamente distintas: operativa (meseros, mesas) y administrativa (KPIs, finanzas, nómina).',
-        en: 'React 19 + Vite frontend with role-separated SPA. Express 5 + MySQL backend with multi-tenant middleware (X-Restaurant-Id header) to isolate data per restaurant. JWT for auth, bcrypt for passwords, Nodemailer for emails. Two completely different interfaces: operational (waiters, tables) and administrative (KPIs, finances, payroll).',
+        es: 'Frontend React 19 + Vite con SPA separada por roles. Backend NestJS + MongoDB con middleware multi-tenant (X-Restaurant-Id header) para aislar datos por restaurante. Mongoose como ODM, JWT para auth, bcrypt para contraseñas. Dos interfaces completamente distintas: operativa (meseros, mesas) y administrativa (KPIs, finanzas, nómina).',
+        en: 'React 19 + Vite frontend with role-separated SPA. NestJS + MongoDB backend with multi-tenant middleware (X-Restaurant-Id header) to isolate data per restaurant. Mongoose as ODM, JWT for auth, bcrypt for passwords. Two completely different interfaces: operational (waiters, tables) and administrative (KPIs, finances, payroll).',
       },
       highlights: {
         es: [
@@ -199,63 +258,10 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    key: 'honeycol', idx: '04', name: 'HoneyCol',
-    url: 'honeycol.co', stack: 'Next.js · Express · MongoDB',
-    sub: { es: 'E-commerce pixel-art con 3D viewer', en: 'Pixel-art e-commerce with 3D viewer' },
-    type: { es: 'E-commerce', en: 'E-commerce' }, year: '2025',
-    tag: { es: 'CASE — 04', en: 'CASE — 04' },
-    status: { es: 'En desarrollo · 2025', en: 'Building · 2025' },
-    desc: {
-      es: 'Tienda de streetwear con estética pixel-art auténtica: visualizador 3D de productos con drag y momentum, checkout en 3 pasos y pagos con Wompi. Degradación elegante si el backend no está disponible.',
-      en: 'Streetwear store with authentic pixel-art aesthetic: 3D product viewer with drag and momentum, 3-step checkout and Wompi payments. Graceful degradation if backend is unavailable.',
-    },
-    role: { es: 'Full stack · solo', en: 'Full stack · solo' },
-    state: { es: 'En desarrollo', en: 'Building' },
-    tags: ['Next.js', 'TypeScript', 'Express', 'MongoDB', 'Wompi'],
-    case: {
-      problem: {
-        es: 'Las tiendas de streetwear locales no tienen presencia digital diferenciada. Shopify es genérico y no permite la personalización visual que requiere una marca de nicho con identidad propia.',
-        en: 'Local streetwear stores lack differentiated digital presence. Shopify is generic and doesn\'t allow the visual customization a niche brand with its own identity requires.',
-      },
-      approach: {
-        es: 'Next.js 15 para el frontend con estética pixel-art completa (fuente Press Start 2P, scanlines CRT, paleta 8-bit). Visualizador 3D de productos con CSS puro y física de momentum sin librerías pesadas. Backend Express + MongoDB para productos y órdenes. Wompi para pagos locales colombianos.',
-        en: 'Next.js 15 frontend with full pixel-art aesthetic (Press Start 2P font, CRT scanlines, 8-bit palette). 3D product viewer with pure CSS and momentum physics, no heavy libraries. Express + MongoDB backend for products and orders. Wompi for Colombian local payments.',
-      },
-      highlights: {
-        es: [
-          'Estética 8-bit completa: fuente pixel, scanlines CRT, paleta retro',
-          'Visualizador 3D con drag + momentum en mouse y touch',
-          'Checkout modal en 3 pasos con validación',
-          'Múltiples métodos de pago: Wompi, WhatsApp, efectivo',
-          'Degradación elegante: productos estáticos si falla el backend',
-          'Rastreo de estado de órdenes (pendiente/pagado/cancelado)',
-        ],
-        en: [
-          'Full 8-bit aesthetic: pixel font, CRT scanlines, retro palette',
-          '3D viewer with drag + momentum on mouse and touch',
-          '3-step checkout modal with validation',
-          'Multiple payment methods: Wompi, WhatsApp, cash',
-          'Graceful degradation: static products if backend fails',
-          'Order status tracking (pending/paid/cancelled)',
-        ],
-      },
-      results: [
-        { value: '0', label: { es: 'Librerías 3D externas', en: '3D external libraries' } },
-        { value: '3', label: { es: 'Métodos de pago', en: 'Payment methods' } },
-        { value: 'CSS', label: { es: 'Pixel-art puro', en: 'Pure pixel-art' } },
-        { value: '100%', label: { es: 'TypeScript end-to-end', en: 'TypeScript end-to-end' } },
-      ],
-      lessons: {
-        es: 'Construir un visualizador 3D sin Three.js o Babylon.js fue el reto principal — solo CSS transforms y JavaScript de physics. Aprendí que las constraints técnicas fuerzan soluciones creativas que terminan siendo más livianas y rápidas que las "soluciones correctas".',
-        en: 'Building a 3D viewer without Three.js or Babylon.js was the main challenge — just CSS transforms and physics JavaScript. I learned that technical constraints force creative solutions that end up being lighter and faster than the "correct solutions".',
-      },
-    },
-  },
-  {
     key: 'martinhq', idx: '05', name: 'MartinHQ Monitor',
     url: 'monitor.martin.dev', stack: 'Node.js · Next.js · Express',
     sub: { es: 'Monitor de VPS con dashboard Next.js', en: 'VPS monitor with Next.js dashboard' },
-    type: { es: 'Tool · VPS Monitor', en: 'Tool · VPS Monitor' }, year: '2025',
+    type: { es: 'Tool · VPS Monitor', en: 'Tool · VPS Monitor' }, year: '2026',
     tag: { es: 'CASE — 05', en: 'CASE — 05' },
     status: { es: 'Online · 2025', en: 'Online · 2025' },
     desc: {
@@ -305,12 +311,12 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    key: 'bot-geoworldmc', idx: '06', name: 'GeoWorldMC Bot',
+    key: 'bot-geoworldmc', idx: '07', name: 'GeoWorldMC Bot',
     url: 'discord.gg/geoworldmc', stack: 'Discord.js · Node.js · MySQL',
     sub: { es: 'Bot oficial de servidor Minecraft', en: 'Official Minecraft server bot' },
-    type: { es: 'Bot · Discord', en: 'Bot · Discord' }, year: '2024',
-    tag: { es: 'CASE — 06', en: 'CASE — 06' },
-    status: { es: 'Online · 2024 → presente', en: 'Online · 2024 → present' },
+    type: { es: 'Bot · Discord', en: 'Bot · Discord' }, year: '2026',
+    tag: { es: 'CASE — 07', en: 'CASE — 07' },
+    status: { es: 'Online · 2026', en: 'Online · 2026' },
     desc: {
       es: 'Bot oficial de Discord para la red GeoWorldMC: sistema de tickets de soporte, anuncios, moderación y conteo dinámico de jugadores conectados al servidor Minecraft en tiempo real.',
       en: 'Official Discord bot for GeoWorldMC network: support ticket system, announcements, moderation and dynamic player count from the Minecraft server in real time.',
@@ -358,11 +364,11 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    key: 'bot-clover', idx: '07', name: 'Clover Bot',
+    key: 'bot-clover', idx: '06', name: 'Clover Bot',
     url: 'discord.gg/clover', stack: 'Discord.js · Node.js · MySQL',
     sub: { es: 'Bot de gestión para comunidad Discord', en: 'Management bot for Discord community' },
     type: { es: 'Bot · Discord', en: 'Bot · Discord' }, year: '2025',
-    tag: { es: 'CASE — 07', en: 'CASE — 07' },
+    tag: { es: 'CASE — 06', en: 'CASE — 06' },
     status: { es: 'Online · 2025', en: 'Online · 2025' },
     desc: {
       es: 'Bot de Discord para Clover Creations: gestión de eventos de la comunidad, interacciones de usuarios, persistencia de datos con Sequelize y operaciones basadas en canales.',
@@ -458,6 +464,59 @@ export const PROJECTS: Project[] = [
       lessons: {
         es: 'No todo proyecto necesita ser web — Swing fue mejor que cualquier framework moderno para este caso. También aprendí a respetar Oracle: feo y viejo, pero brutal en integridad transaccional.',
         en: 'Not every project needs to be web — Swing was better than any modern framework here. I also learned to respect Oracle: ugly and old, but brutal at transactional integrity.',
+      },
+    },
+  },
+  {
+    key: 'honeycol', idx: '09', name: 'HoneyCol',
+    url: 'honeycol.co', stack: 'Next.js · Express · MongoDB',
+    sub: { es: 'E-commerce pixel-art con 3D viewer', en: 'Pixel-art e-commerce with 3D viewer' },
+    type: { es: 'E-commerce', en: 'E-commerce' }, year: '2025',
+    tag: { es: 'CASE — 09', en: 'CASE — 09' },
+    status: { es: 'En desarrollo · 2025', en: 'Building · 2025' },
+    desc: {
+      es: 'Tienda de streetwear con estética pixel-art auténtica: visualizador 3D de productos con drag y momentum, checkout en 3 pasos y pagos con Wompi. Degradación elegante si el backend no está disponible.',
+      en: 'Streetwear store with authentic pixel-art aesthetic: 3D product viewer with drag and momentum, 3-step checkout and Wompi payments. Graceful degradation if backend is unavailable.',
+    },
+    role: { es: 'Full stack · solo', en: 'Full stack · solo' },
+    state: { es: 'En desarrollo', en: 'Building' },
+    tags: ['Next.js', 'TypeScript', 'Express', 'MongoDB', 'Wompi'],
+    case: {
+      problem: {
+        es: 'Las tiendas de streetwear locales no tienen presencia digital diferenciada. Shopify es genérico y no permite la personalización visual que requiere una marca de nicho con identidad propia.',
+        en: 'Local streetwear stores lack differentiated digital presence. Shopify is generic and doesn\'t allow the visual customization a niche brand with its own identity requires.',
+      },
+      approach: {
+        es: 'Next.js 15 para el frontend con estética pixel-art completa (fuente Press Start 2P, scanlines CRT, paleta 8-bit). Visualizador 3D de productos con CSS puro y física de momentum sin librerías pesadas. Backend Express + MongoDB para productos y órdenes. Wompi para pagos locales colombianos.',
+        en: 'Next.js 15 frontend with full pixel-art aesthetic (Press Start 2P font, CRT scanlines, 8-bit palette). 3D product viewer with pure CSS and momentum physics, no heavy libraries. Express + MongoDB backend for products and orders. Wompi for Colombian local payments.',
+      },
+      highlights: {
+        es: [
+          'Estética 8-bit completa: fuente pixel, scanlines CRT, paleta retro',
+          'Visualizador 3D con drag + momentum en mouse y touch',
+          'Checkout modal en 3 pasos con validación',
+          'Múltiples métodos de pago: Wompi, WhatsApp, efectivo',
+          'Degradación elegante: productos estáticos si falla el backend',
+          'Rastreo de estado de órdenes (pendiente/pagado/cancelado)',
+        ],
+        en: [
+          'Full 8-bit aesthetic: pixel font, CRT scanlines, retro palette',
+          '3D viewer with drag + momentum on mouse and touch',
+          '3-step checkout modal with validation',
+          'Multiple payment methods: Wompi, WhatsApp, cash',
+          'Graceful degradation: static products if backend fails',
+          'Order status tracking (pending/paid/cancelled)',
+        ],
+      },
+      results: [
+        { value: '0', label: { es: 'Librerías 3D externas', en: '3D external libraries' } },
+        { value: '3', label: { es: 'Métodos de pago', en: 'Payment methods' } },
+        { value: 'CSS', label: { es: 'Pixel-art puro', en: 'Pure pixel-art' } },
+        { value: '100%', label: { es: 'TypeScript end-to-end', en: 'TypeScript end-to-end' } },
+      ],
+      lessons: {
+        es: 'Construir un visualizador 3D sin Three.js o Babylon.js fue el reto principal — solo CSS transforms y JavaScript de physics. Aprendí que las constraints técnicas fuerzan soluciones creativas que terminan siendo más livianas y rápidas que las "soluciones correctas".',
+        en: 'Building a 3D viewer without Three.js or Babylon.js was the main challenge — just CSS transforms and physics JavaScript. I learned that technical constraints force creative solutions that end up being lighter and faster than the "correct solutions".',
       },
     },
   },

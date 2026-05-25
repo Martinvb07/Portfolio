@@ -681,6 +681,43 @@ body.dark .featured-preview { background: var(--paper-2); }
   background-size: 28px 28px;
   opacity: 0.7;
 }
+.featured-preview-video {
+  position: relative;
+  z-index: 1;
+  width: 88%;
+  height: 78%;
+  object-fit: cover;
+  border: 1px solid var(--ink);
+  box-shadow: 8px 8px 0 var(--ink);
+  border-radius: 4px;
+}
+.discord-preview {
+  position: relative;
+  z-index: 1;
+  width: 88%;
+  height: 78%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  border: 1px solid var(--ink);
+  box-shadow: 8px 8px 0 var(--ink);
+  border-radius: 4px;
+  background: #23272a;
+}
+.discord-preview-logo {
+  width: 72px;
+  height: auto;
+  filter: drop-shadow(0 0 18px rgba(88,101,242,0.5));
+}
+.discord-preview-label {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: #b9bbbe;
+  text-transform: lowercase;
+}
 .featured-preview-mock {
   position: relative;
   z-index: 1;

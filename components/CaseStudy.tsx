@@ -176,6 +176,7 @@ export default function CaseStudy({ project }: { project: Project }) {
             {project.tags.map((tag) => {
               const tech = TECH_ICONS[tag];
               const isWompi = tag === 'Wompi';
+              const isLenis = tag === 'Lenis';
               return (
                 <div key={tag} className="case-stack-item">
                   {isWompi ? (
@@ -184,6 +185,11 @@ export default function CaseStudy({ project }: { project: Project }) {
                       <path d="M2 10h20" />
                       <circle cx="6" cy="15" r="1.2" fill="#e63319" stroke="none" />
                       <circle cx="10" cy="15" r="1.2" fill="#e63319" stroke="none" />
+                    </svg>
+                  ) : isLenis ? (
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M2 9c2.5-3.5 5-3.5 7 0s4.5 3.5 7 0" />
+                      <path d="M2 15c2.5-3.5 5-3.5 7 0s4.5 3.5 7 0" />
                     </svg>
                   ) : tech ? (
                     /* eslint-disable-next-line @next/next/no-img-element */

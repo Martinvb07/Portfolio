@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+<img src="app/icon.svg" width="80" alt="M" />
 
-First, run the development server:
+# Martín Velásquez — Portfolio
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Full Stack Developer · Villavicencio, Colombia**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[![Next.js](https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+</div>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+Portfolio personal construido desde cero con Next.js App Router. Diseño brutalista editorial — tipografía gruesa, grid visible, paleta monocromática con acento rojo. Bilingüe (🇪🇸 / 🇬🇧), modo oscuro, y cada proyecto tiene su propia página de caso de estudio.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Proyectos
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| # | Proyecto | Stack | Tipo |
+|---|----------|-------|------|
+| 01 | **Cuscus Hats** | Next.js · Tailwind · Lenis | Landing · E-commerce |
+| 02 | **ReservaTuCancha** | React · Node.js · MySQL | Web App |
+| 03 | **AgroManager Pro** | React · Node.js · Oracle DB | Plataforma |
+| 04 | **MeSoft** | React · NestJS · MongoDB | SaaS |
+| 05 | **MartinHQ Monitor** | Next.js · Node.js · MySQL | Tool |
+| 06 | **Clover Bot** | Discord.js · Node.js · MySQL | Bot |
+| 07 | **GeoWorldMC Bot** | Discord.js · Node.js · MySQL | Bot |
+| 08 | **Sistema Gestión J** | Java · Oracle DB | Empresarial |
+| 09 | **HoneyCol** | HTML · CSS · JavaScript | Landing |
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<div align="center">
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**[GitHub](https://github.com/Martinvb07)** · Villavicencio, Colombia
+
+</div>
