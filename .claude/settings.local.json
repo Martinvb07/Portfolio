@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /tmp/design)",
+      "Bash(tar -xzf \"C:/Users/marti/.claude/projects/C--Users-marti-Devps-portfolio/94e8e2eb-18c5-4e9e-9c81-8f39c0f1eb87/tool-results/webfetch-1777986921524-krpn20.bin\" -C /tmp/design)",
+      "Bash(cp \"/c/Users/marti/.claude/projects/C--Users-marti-Devps-portfolio/94e8e2eb-18c5-4e9e-9c81-8f39c0f1eb87/tool-results/webfetch-1777986921524-krpn20.bin\" /tmp/design.tar.gz)",
+      "Bash(tar -xzf /tmp/design.tar.gz -C /tmp/design)",
+      "Bash(cp /tmp/design/portfolio/project/Portfolio.html /tmp/Portfolio.html)",
+      "Bash(cp /tmp/design/portfolio/project/styles.css /tmp/styles.css)",
+      "Bash(cp /tmp/design/portfolio/project/i18n.js /tmp/i18n.js)",
+      "Bash(cp /tmp/Portfolio.html C:/Users/marti/Devps/portfolio/.design-source-Portfolio.html)",
+      "Bash(cp /tmp/styles.css C:/Users/marti/Devps/portfolio/.design-source-styles.css)",
+      "Bash(cp /tmp/i18n.js C:/Users/marti/Devps/portfolio/.design-source-i18n.js)",
+      "Bash(cp *)"
+    ]
+  }
+}
