@@ -139,6 +139,24 @@ export default function CaseStudy({ project }: { project: Project }) {
         </div>
       </section>
 
+      {project.videoUrl && (
+        <section className="case-media">
+          <div className="shell">
+            <div className="case-media-browser">
+              <div className="case-media-bar">
+                <span className="fpm-dot" /><span className="fpm-dot" /><span className="fpm-dot" />
+                <span className="case-media-url">{project.url}</span>
+              </div>
+              <video
+                className="case-media-video"
+                src={project.videoUrl}
+                autoPlay muted loop playsInline aria-hidden="true"
+              />
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="section section-foot">
         <div className="shell">
           <div className="sec-marker reveal">

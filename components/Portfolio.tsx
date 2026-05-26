@@ -307,7 +307,7 @@ export default function Portfolio() {
               </h2>
               <p className="reveal d1">{t('about.p1')}</p>
               <p className="reveal d2">{t('about.p2')}</p>
-              <p className="reveal d3">{t('about.p3')}</p>
+              {t('about.p3') && <p className="reveal d3">{t('about.p3')}</p>}
             </div>
             <div className="about-side">
               <div className="metric-block reveal d2">
@@ -320,7 +320,7 @@ export default function Portfolio() {
                 <div className="spec-row"><span className="k">{t('spec.front')}</span><span className="v">React · Next.js · TypeScript</span></div>
                 <div className="spec-row"><span className="k">{t('spec.back')}</span><span className="v">Node.js · NestJS · Java</span></div>
                 <div className="spec-row"><span className="k">{t('spec.devops')}</span><span className="v">VPS · Nginx · PM2 · Linux</span></div>
-                <div className="spec-row"><span className="k">{t('spec.edu')}</span><span className="v">UCC · 7mo semestre</span></div>
+                <div className="spec-row"><span className="k">{t('spec.edu')}</span><span className="v">Universidad Cooperativa de Colombia · 8mo semestre</span></div>
                 <div className="spec-row"><span className="k">{t('spec.lang')}</span><span className="v">Español · Inglés</span></div>
               </div>
             </div>

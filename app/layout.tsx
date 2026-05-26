@@ -28,11 +28,21 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://martin.dev'),
   title: 'MARTIN.DEV — Full Stack Developer',
   description:
-    'Portfolio de Martín — Full Stack Developer en Villavicencio, Colombia. Backend, APIs y despliegue real.',
+    'Portfolio de Martín Velásquez — Full Stack Developer en Villavicencio, Colombia. React, Next.js, Node.js, NestJS y despliegue real en producción.',
   openGraph: {
     title: 'MARTIN.DEV — Full Stack Developer',
     description:
-      'Portfolio de Martín — Full Stack Developer en Villavicencio, Colombia. Backend, APIs y despliegue real.',
+      'Portfolio de Martín Velásquez — Full Stack Developer en Villavicencio, Colombia. React, Next.js, Node.js, NestJS y despliegue real en producción.',
+    url: 'https://martin.dev',
+    siteName: 'MARTIN.DEV',
+    type: 'website',
+    images: [{ url: '/og.svg', width: 512, height: 512, alt: 'MARTIN.DEV' }],
+  },
+  twitter: {
+    card: 'summary',
+    title: 'MARTIN.DEV — Full Stack Developer',
+    description: 'Portfolio de Martín Velásquez — Full Stack Developer en Villavicencio, Colombia.',
+    images: ['/og.svg'],
   },
 };
 
